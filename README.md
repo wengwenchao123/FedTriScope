@@ -51,12 +51,7 @@ load trusted checkpoints. This is evaluation, not optimizer-state resume.
 | History / forecast | 12 / 6 steps |
 | Common feature/identity dimension | 8 for LA/BAY targets; 64 for Shenzhen/Chengdu targets |
 | Input | Standardized speed relative to the final historical observation |
-| Temporal conditioning | Last historical time-of-day slot; concatenated once |
 | Backbone | Three residual point-wise MLP blocks, dropout 0.15 |
-| Last-value injection | Broadcast into features before the prediction head |
-| Loss | Unmasked MAE on original observation scale |
-| Batch size / seed | 32 / 0 |
-| Federated stage | 90 rounds, 150 synchronous minibatches per round (13,500 updates) |
 | Shared target/source step sizes | 0.0002 / 0.000001 |
 | Private optimizer | Adam, 0.001 |
 | Target adaptation | 50 full epochs; fresh shared Adam at 0.001, retained private Adam state |
