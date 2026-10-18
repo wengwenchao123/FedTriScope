@@ -1,0 +1,24 @@
+{
+  "target_city": "chengdu",
+  "data_list": [
+    "metr-la",
+    "pems-bay",
+    "shenzhen",
+    "chengdu"
+  ],
+  "dim": 64,
+  "lag": 12,
+  "horizon": 6,
+  "target_days": 3,
+  "target_steps_per_day": 288,
+  "normalization": "full",
+  "batch_size": 32,
+  "num_rounds": 90,
+  "local_epochs": 150,
+  "target_epochs": 50,
+  "lr_init": 0.001,
+  "seed": 0,
+  "tsb_target_lr": 0.0002,
+  "tsb_source_lr": 1e-06,
+  "tsb_projection": "tsb"
+}
