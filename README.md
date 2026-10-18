@@ -76,7 +76,7 @@ also includes configuration, training history and dataset metadata. `curve.json`
 contains training losses and update counts only. `final.pth` is the sole saved
 checkpoint; there is no metric-based checkpoint selection or early stopping.
 MAE/RMSE are computed separately per forecast step across all test windows and
-nodes, then averaged over the six steps. Zeros are not masked.
+nodes, then averaged over the six steps.
 
 Optional mechanism controls retain the same architecture and training budget:
 
