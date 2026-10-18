@@ -9,7 +9,12 @@ floating-point results can vary across hardware and dependency versions.
 
 ## Data
 
-Follow [data/README.md](data/README.md). Datasets and checkpoints are not bundled.
+The datasets can be obtained through the download link in the Data section of
+the [ST-GFSL repository](https://github.com/RobinLu1209/ST-GFSL#data).
+Please follow its data usage and citation instructions. Datasets and checkpoints
+are not bundled with this repository. Prepare the processed `dataset.npy` files
+under `data/<city>/`; PEMS-BAY additionally requires `pems-bay.h5` with its original
+timestamps for calendar alignment.
 `--data_path` specifies the parent directory containing all four city folders.
 It defaults to this repository's `data/` directory. Explicit relative paths are
 resolved against the current working directory.
