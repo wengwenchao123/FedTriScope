@@ -1,11 +1,5 @@
 # FedTriScope
 
-FedTriScope is a cross-city traffic forecasting model with a globally shared
-node-wise MLP backbone, city-private time-of-day embeddings, and node-specific
-embeddings. It uses target-guided synchronous federated gradient updates (fedTSB).
-This release contains the three-layer MLP main model, not the spatial-attention
-ablation or other forecasting baselines. All cities are simulated in one process.
-
 ## Installation
 
 Use Python 3.9 or newer. Install a PyTorch build appropriate for your GPU first,
@@ -99,19 +93,3 @@ python run.py --config configs/metr-la.json --tsb_source_lr 0
 The second control is Target Updates Only; source calculations still execute for
 matched control behavior. It is not the historical 100-epoch Target-only protocol.
 
-## Layout and checks
-
-- `fedtriscope/model.py`: shared MLP and private identity tables.
-- `fedtriscope/data.py`: city windows, scaling and BAY calendar alignment.
-- `fedtriscope/client.py`: city/server parameter ownership.
-- `fedtriscope/trainer.py`: fedTSB and target adaptation.
-- `fedtriscope/evaluation.py`: logging and metrics.
-- `configs/`: four target-city presets.
-- `tests/`: synthetic smoke and regression checks (no external dataset required).
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-No dataset or third-party baseline implementation is redistributed. A public redistribution license has not
-been selected for this repository; no license grant is implied.
